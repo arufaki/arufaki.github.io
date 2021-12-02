@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500;1,700&display=swap");
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: Poppins, sans-serif;
+  overflow-x: hidden;
+  min-height: 4000px;
+}
+
+h1,
+h2,
+h5 {
+  font-family: Poppins, sans-serif;
+  color: #37423b;
+}
+
+p {
+  font-family: Poppins, sans-serif;
+  color: #37423b;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* NAVBAR */
+
+.navbar-collapse .navbar-nav .nav-link {
+  color: #37423b;
+}
+
+.navbar-collapse .navbar-nav .nav-link:hover {
+  color: #2986ff;
+}
+
+.navbar-collapse .navbar-nav .active {
+  color: #2986ff;
+}
+
+.nav-item a {
+  font-weight: 500;
+  font-family: poppins, sans-serif;
+  font-size: 15px;
+}
+
+/* ABOUT */
+
+#about {
+  padding: 2rem;
+}
+
+.img-banner {
+  border: 20px solid #2986ff;
+  -webkit-border-top-left-radius: 120px;
+  -webkit-border-bottom-right-radius: 120px;
+  -moz-border-radius-topleft: 120px;
+  -moz-border-radius-bottomright: 120px;
+  border-top-left-radius: 120px;
+  border-bottom-right-radius: 120px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.52);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.52);
+  max-width: 400px;
+}
+
+section {
+  padding-top: 4rem;
+}
