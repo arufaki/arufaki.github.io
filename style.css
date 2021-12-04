@@ -53,6 +53,22 @@ p {
   padding: 2rem;
 }
 
+.my-column {
+  margin-top: 75px;
+}
+
+#projects {
+  margin-top: 50px;
+}
+
+#courses {
+  margin-top: 100px;
+}
+
+#contact {
+  margin-top: 50px;
+}
+
 .img-banner {
   border: 20px solid #2986ff;
   -webkit-border-top-left-radius: 120px;
@@ -69,4 +85,39 @@ p {
 
 section {
   padding-top: 4rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .img-banner {
+    max-width: 330px;
+  }
+
+  #projects {
+    margin-top: 0;
+  }
+
+  #courses {
+    margin-top: 0;
+  }
+  #contact {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .my-column {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .img-banner {
+    max-width: 270px;
+  }
+
+  #contact {
+    margin-top: 0;
+  }
 }
