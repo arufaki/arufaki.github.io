@@ -91,7 +91,7 @@ section {
 
 @media (max-width: 768px) {
   .img-banner {
-    max-width: 330px;
+    max-width: 280px;
   }
 
   #projects {
