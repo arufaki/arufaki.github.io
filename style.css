@@ -53,6 +53,10 @@ p {
   padding: 2rem;
 }
 
+.my-about {
+  margin-top: 100px;
+}
+
 .my-column {
   margin-top: 75px;
 }
@@ -92,6 +96,16 @@ section {
 @media (max-width: 768px) {
   .img-banner {
     max-width: 280px;
+    border: 15px solid #2986ff;
+    -webkit-border-top-left-radius: 100px;
+    -webkit-border-bottom-right-radius: 100px;
+    -moz-border-radius-topleft: 100px;
+    -moz-border-radius-bottomright: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+  .my-about {
+    margin-top: 0;
   }
 
   #projects {

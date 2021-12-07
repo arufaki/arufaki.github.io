@@ -61,7 +61,7 @@
     <!-- ABOUT -->
     <section id="about" class="container">
       <div class="row" style="margin-top: 100px">
-        <div class="col-md-6" data-aos="zoom-in-left" data-aos-delay="100" data-aos-duration="2000">
+        <div class="col-md-6 my-about" data-aos="zoom-in-left" data-aos-delay="100" data-aos-duration="2000">
           <h1 class="fw-bold" style="color: #2986ff">Hai, Saya ALFAKIH ANGGI</h1>
           <h2 class="fw-bold">JUNIOR FRONT END DEVELOPER</h2>
           <p class="mt-1 mb-4">
@@ -180,20 +180,28 @@
       </div>
       <div class="row mt-4">
         <div class="col-lg-6">
-          <form action="" method="post">
+          <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+            <strong>Selamat!</strong> Pesan Anda Sukses Dikirim
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <form action="" method="post" name="contact-form">
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" placeholder="Email" id="email" aria-describedby="email" name="email" />
+              <input type="email" class="form-control" placeholder="Email" id="email" aria-describedby="email" name="email" required />
             </div>
             <div class="mb-3">
               <label for="nama" class="form-label">Nama Lengkap</label>
-              <input class="form-control" type="text" placeholder="Nama Lengkap" id="nama" aria-label="nama" />
+              <input class="form-control" type="text" placeholder="Nama Lengkap" id="nama" aria-label="nama" name="nama" required />
             </div>
             <div class="mb-3">
               <label for="pesan" class="form-label">Pesan</label>
-              <textarea class="form-control" id="pesan" placeholder="Pesan"></textarea>
+              <textarea class="form-control" id="pesan" placeholder="Pesan" name="pesan" required></textarea>
             </div>
-            <button class="btn btn-primary" id="submit" name="submit">Kirim</button>
+            <button type="submit" class="btn btn-primary btn-kirim" id="submit" name="submit">Kirim</button>
+
+            <div class="spinner-border text-primary btn-loading d-none" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
           </form>
         </div>
         <div class="col-lg-6 mb-4 mt-4">
@@ -236,6 +244,31 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyN-_ore-I1QkkjEz1Valm7ofZyKJaDGsiGHfFi880eUPkbOPvLD5y_1krQNcWDZX_0fg/exec";
+      const form = document.forms["contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            myAlert.classList.toggle("d-none");
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
     </script>
   </body>
 </html>
